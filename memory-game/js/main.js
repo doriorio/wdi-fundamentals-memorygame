@@ -1,6 +1,4 @@
 console.log("connected!");
-var button = document.querySelector("button");
-button.addEventListener("click", resetCards);
 
 
 var cards = [
@@ -68,18 +66,21 @@ function createBoard() {
         cardElement.setAttribute('data-id', i);
         document.getElementById('game-board').appendChild(cardElement);
         cardElement.addEventListener('click', flipCard);
-
     }
 
 }
+
+
 function resetCards() {
-    cardsInPlay = [];
-}
-    
-    
-    
+    var gameboard = document.getElementById('game-board');
+    gameboard.innerHTML = "";
+	createBoard();
+    }
+
+
+var button = document.querySelector("button");
+button.addEventListener("click" , resetCards);
+
+
 
 createBoard();
-
-
-
